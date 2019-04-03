@@ -7,26 +7,25 @@ import (
 	"fmt"
 	"math/big"
 	"strings"
-	"web3.go/common/cryp/sha3"
 	"web3.go/common/hexutil"
 	"web3.go/web3/complex/types"
 	"web3.go/web3/dto"
+	"web3.go/web3/thk/abi"
 	"web3.go/web3/thk/util"
 )
 
-
 type Contract struct {
 	super     *Thk
-	abi       string
+	abi       abi.ABI
 	functions map[string][]string
 }
 
-func (thk *Thk) NewContract(abi string) (*Contract, error) {
+func (thk *Thk) NewContract(abistr string) (*Contract, error) {
 
 	contract := new(Contract)
 	var mockInterface interface{}
 
-	err := json.Unmarshal([]byte(abi), &mockInterface)
+	err := json.Unmarshal([]byte(abistr), &mockInterface)
 
 	if err != nil {
 		return nil, err
@@ -55,53 +54,55 @@ func (thk *Thk) NewContract(abi string) (*Contract, error) {
 		}
 
 	}
-
-	contract.abi = abi
+	readerstr := strings.NewReader(abistr)
+	Abi, err := abi.JSON(readerstr)
+	if err != nil {
+		return nil, err
+	}
+	contract.abi = Abi
 	contract.super = thk
 
 	return contract, nil
 }
 
-func (contract *Contract) prepareTransaction(transaction util.Transaction, functionName string, args []interface{}) (util.Transaction, error) {
-
-	function, ok := contract.functions[functionName]
-	if !ok {
-		return transaction, errors.New("Function not finded on passed abi")
-	}
-
-	fullFunction := functionName + "("
-
-	comma := ""
-	for arg := range function {
-		fullFunction += comma + function[arg]
-		comma = ","
-	}
-
-	fullFunction += ")"
-
-	hash := sha3.NewKeccak256()
-	hash.Write([]byte(fullFunction))
-	inputbyte := hash.Sum(nil)
-	input := hexutil.Encode(inputbyte)
-	var data string
-
-	// for index := 0; index < len(function); index++ {
-	// 	currentData, err := contract.getHexValue(function[index], args[index])
-	//
-	// 	if err != nil {
-	// 		return transaction, err
-	// 	}
-	//
-	// 	data += currentData
-	// }
-
-
-
-	transaction.Input = string(types.ComplexString(input[0:10] + data))
-
-	return transaction, nil
-
-}
+// func (contract *Contract) prepareTransaction(transaction util.Transaction, functionName string, args []interface{}) (util.Transaction, error) {
+//
+// 	function, ok := contract.functions[functionName]
+// 	if !ok {
+// 		return transaction, errors.New("Function not finded on passed abi")
+// 	}
+//
+// 	fullFunction := functionName + "("
+//
+// 	comma := ""
+// 	for arg := range function {
+// 		fullFunction += comma + function[arg]
+// 		comma = ","
+// 	}
+//
+// 	fullFunction += ")"
+//
+// 	hash := sha3.NewKeccak256()
+// 	hash.Write([]byte(fullFunction))
+// 	inputbyte := hash.Sum(nil)
+// 	input := hexutil.Encode(inputbyte)
+// 	var data string
+//
+// 	// for index := 0; index < len(function); index++ {
+// 	// 	currentData, err := contract.getHexValue(function[index], args[index])
+// 	//
+// 	// 	if err != nil {
+// 	// 		return transaction, err
+// 	// 	}
+// 	//
+// 	// 	data += currentData
+// 	// }
+//
+// 	transaction.Input = string(types.ComplexString(input[0:10] + data))
+//
+// 	return transaction, nil
+//
+// }
 
 func (contract *Contract) getHexValue(inputType string, value interface{}) (string, error) {
 
@@ -144,11 +145,12 @@ func (contract *Contract) getHexValue(inputType string, value interface{}) (stri
 
 func (contract *Contract) Send(transaction util.Transaction, functionName string, privatekey *ecdsa.PrivateKey, args ...interface{}) (string, error) {
 
-	transaction, err := contract.prepareTransaction(transaction, functionName, args)
-
+	// transaction, err := contract.prepareTransaction(transaction, functionName, args)
+	fixedArrStrPack, err := contract.abi.Pack(functionName, args...)
 	if err != nil {
 		return "", err
 	}
+	transaction.Input = hexutil.Encode(fixedArrStrPack)
 	if err = contract.super.SignTransaction(&transaction, privatekey); err != nil {
 		return "", err
 	}
@@ -158,6 +160,7 @@ func (contract *Contract) Send(transaction util.Transaction, functionName string
 
 func (contract *Contract) Deploy(transaction util.Transaction, bytecode string, privatekey *ecdsa.PrivateKey, args ...interface{}) (string, error) {
 
+	// constructor := contract.functions["constructor"]
 	constructor := contract.functions["constructor"]
 
 	for index := 0; index < len(constructor); index++ {
@@ -181,12 +184,12 @@ func (contract *Contract) Deploy(transaction util.Transaction, bytecode string, 
 
 func (contract *Contract) Call(transaction util.Transaction, functionName string, args ...interface{}) (*dto.TxResult, error) {
 
-	transaction, err := contract.prepareTransaction(transaction, functionName, args)
-
+	// transaction, err := contract.prepareTransaction(transaction, functionName, args)
+	fixedArrStrPack, err := contract.abi.Pack(functionName, args...)
 	if err != nil {
 		return nil, err
 	}
-
+	transaction.Input = hexutil.Encode(fixedArrStrPack)
 	return contract.super.CallTransaction(&transaction)
 
 }

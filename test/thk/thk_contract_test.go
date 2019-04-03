@@ -13,18 +13,26 @@ import (
 )
 
 func TestThkContract(t *testing.T) {
-	content, err := ioutil.ReadFile("../resources/simple-token.json")
+	content, err := ioutil.ReadFile("../resources/dahan.json")
 	type TruffleContract struct {
 		Abi      string `json:"abi"`
 		Bytecode string `json:"bytecode"`
 	}
 	var unmarshalResponse TruffleContract
-	_ = json.Unmarshal(content, &unmarshalResponse)
+	err = json.Unmarshal(content, &unmarshalResponse)
+	if err != nil {
+		t.Error(err)
+		t.FailNow()
+	}
 
 	var connection = web3.NewWeb3(providers.NewHTTPProvider("http2rpc.thinkium.info:8880", 10, false))
 
 	bytecode := unmarshalResponse.Bytecode
 	contract, err := connection.Thk.NewContract(unmarshalResponse.Abi)
+	if err != nil {
+		t.Error(err)
+		t.FailNow()
+	}
 	from := "0x2c7536e3605d9c16a7a3d7b1898e529396a65c23"
 	nonce, err := connection.Thk.GetNonce(from, "2")
 	if err != nil {
@@ -51,7 +59,7 @@ func TestThkContract(t *testing.T) {
 	}
 	t.Log("contract address:", recepit.ContractAddress)
 	transaction.To = recepit.ContractAddress
-	result, err := contract.Call(transaction, "name")
+	result, err := contract.Call(transaction, "getObjsNum")
 	if err != nil {
 		t.Error(err)
 		t.FailNow()
