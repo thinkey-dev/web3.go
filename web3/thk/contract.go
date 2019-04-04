@@ -65,45 +65,6 @@ func (thk *Thk) NewContract(abistr string) (*Contract, error) {
 	return contract, nil
 }
 
-// func (contract *Contract) prepareTransaction(transaction util.Transaction, functionName string, args []interface{}) (util.Transaction, error) {
-//
-// 	function, ok := contract.functions[functionName]
-// 	if !ok {
-// 		return transaction, errors.New("Function not finded on passed abi")
-// 	}
-//
-// 	fullFunction := functionName + "("
-//
-// 	comma := ""
-// 	for arg := range function {
-// 		fullFunction += comma + function[arg]
-// 		comma = ","
-// 	}
-//
-// 	fullFunction += ")"
-//
-// 	hash := sha3.NewKeccak256()
-// 	hash.Write([]byte(fullFunction))
-// 	inputbyte := hash.Sum(nil)
-// 	input := hexutil.Encode(inputbyte)
-// 	var data string
-//
-// 	// for index := 0; index < len(function); index++ {
-// 	// 	currentData, err := contract.getHexValue(function[index], args[index])
-// 	//
-// 	// 	if err != nil {
-// 	// 		return transaction, err
-// 	// 	}
-// 	//
-// 	// 	data += currentData
-// 	// }
-//
-// 	transaction.Input = string(types.ComplexString(input[0:10] + data))
-//
-// 	return transaction, nil
-//
-// }
-
 func (contract *Contract) getHexValue(inputType string, value interface{}) (string, error) {
 
 	var data string
