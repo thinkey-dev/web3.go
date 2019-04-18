@@ -34,3 +34,15 @@ type GetBlockHeader struct {
 	ChainId string `json:"chainId"`
 	Height  string `json:"height"`
 }
+
+type PingJson struct {
+	ChainId string `json:"chainId"`
+}
+
+type GetChainInfoJson struct {
+	ChainId string `json:"chainId"`
+}
+
+type GetMultiStatsJson struct {
+	ChainId string `json:"chainId"`
+}

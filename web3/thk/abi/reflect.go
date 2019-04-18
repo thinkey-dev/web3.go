@@ -62,6 +62,22 @@ func set(dst, src reflect.Value) error {
 	return nil
 }
 
+func myset(dst, src reflect.Value, output Argument) error {
+	dstType := dst.Type()
+	srcType := src.Type()
+	switch {
+	case dstType.AssignableTo(srcType):
+		dst.Set(src)
+	case dstType.Kind() == reflect.Interface:
+		dst.Set(src)
+	case dstType.Kind() == reflect.Ptr:
+		return myset(dst.Elem(), src, output)
+	default:
+		return fmt.Errorf("abi: cannot unmarshal %v in to %v", src.Type(), dst.Type())
+	}
+	return nil
+}
+
 func setSlice(dst, src reflect.Value) error {
 	slice := reflect.MakeSlice(dst.Type(), src.Len(), src.Len())
 	for i := 0; i < src.Len(); i++ {
