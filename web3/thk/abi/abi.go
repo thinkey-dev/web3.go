@@ -133,31 +133,22 @@ func (abi *ABI) MethodById(sigdata []byte) (*Method, error) {
 	return nil, fmt.Errorf("no method with id: %#x", sigdata[:4])
 }
 
-func (abi ABI) InputUnpack(v []interface{}, name string, input []byte) (err error) {
+
+//inputParam input[4:]
+
+func (abi ABI) InputUnpack(v map[string]interface{}, name string, inputParam []byte) (err error) {
 
 	// 判断输入数据是否正确
-	if len(input) == 0 {
+	if len(inputParam) == 0 {
 		return errors.New("abi: unmarshalling empty input")
-	} else if len(input)%32 != 0 {
+	} else if len(inputParam)%32 != 0 {
 		return errors.New("abi: improperly formatted input")
 	}
 
 	// 得到abi的方法信息
 	if method, ok := abi.Methods[name]; ok {
 
-		// 判断输入接口是否和参数数量一致
-		if len(v) != len(abi.Methods[name].Inputs) {
-			return errors.New("abi: methods count not equal to interface")
-		}
-
-		// 根据参数数量判断解码方式
-		if len(method.Inputs) <= 1 {
-			// 单参数解码
-			return method.singleInputUnpack(v[0], input)
-		} else {
-			// 多参数解码
-			return method.multInputUnpack(v, input)
-		}
+		return method.Inputs.UnpackIntoMap(v, inputParam)
 	}
 	return errors.New("abi: could not locate named method")
 }
