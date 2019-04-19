@@ -67,6 +67,10 @@ type GetBlockResult struct {
 	ErrMsg       string `json:"ErrMsg,Omitempty"`
 }
 
+type GetMultiStatsResult struct {
+	ErrMsg string `json:"ErrMsg,Omitempty"`
+}
+
 type Error struct {
 	Code    int         `json:"code"`
 	Message string      `json:"message"`

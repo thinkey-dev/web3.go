@@ -139,16 +139,6 @@ func forTupleUnpack(t Type, output []byte) (interface{}, error) {
 	for index, elem := range t.TupleElems {
 		marshalledValue, err := toGoType((index+virtualArgs)*32, *elem, output)
 		if elem.T == ArrayTy && !isDynamicType(*elem) {
-			// If we have a static array, like [3]uint256, these are coded as
-			// just like uint256,uint256,uint256.
-			// This means that we need to add two 'virtual' arguments when
-			// we count the index from now on.
-			//
-			// Array values nested multiple levels deep are also encoded inline:
-			// [2][3]uint256: uint256,uint256,uint256,uint256,uint256,uint256
-			//
-			// Calculate the full array size to get the correct offset for the next argument.
-			// Decrement it by 1, as the normal index increment is still applied.
 			virtualArgs += getTypeSize(*elem)/32 - 1
 		} else if elem.T == TupleTy && !isDynamicType(*elem) {
 			// If we have a static tuple, like (uint256, bool, uint256), these are
@@ -160,6 +150,7 @@ func forTupleUnpack(t Type, output []byte) (interface{}, error) {
 		}
 		retval.Field(index).Set(reflect.ValueOf(marshalledValue))
 	}
+
 	return retval.Interface(), nil
 }
 
@@ -191,7 +182,8 @@ func toGoType(index int, t Type, output []byte) (interface{}, error) {
 			if err != nil {
 				return nil, err
 			}
-			return forTupleUnpack(t, output[begin:])
+			res, err := forTupleUnpack(t, output[begin:])
+			return res, err
 		} else {
 			return forTupleUnpack(t, output[index:])
 		}

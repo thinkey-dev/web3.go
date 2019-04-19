@@ -29,3 +29,18 @@ func (param *GetBlockHeader) FormatParams(chainId string, height string) error {
 	param.Height = height
 	return nil
 }
+
+func (param *PingJson) FormatParams(chainid string) error {
+	param.ChainId = chainid
+	return nil
+}
+
+func (param *GetChainInfoJson) FormatParams(chainId string) error {
+	param.ChainId = chainId
+	return nil
+}
+
+func (param *GetMultiStatsJson) FormatParams(chainId string) error {
+	param.ChainId = chainId
+	return nil
+}

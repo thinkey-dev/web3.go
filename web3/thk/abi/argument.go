@@ -78,6 +78,15 @@ func (arguments Arguments) Unpack(v interface{}, data []byte) error {
 	return arguments.unpackAtomic(v, marshalledValues[0])
 }
 
+func (arguments Arguments) UnpackIntoMap(v map[string]interface{}, data []byte) error {
+	marshalledValues, err := arguments.UnpackValues(data)
+	if err != nil {
+		return err
+	}
+
+	return arguments.unpackIntoMap(v, marshalledValues)
+}
+
 func unpack(t *Type, dst interface{}, src interface{}) error {
 	var (
 		dstVal = reflect.ValueOf(dst).Elem()
@@ -130,6 +139,18 @@ func unpack(t *Type, dst interface{}, src interface{}) error {
 			}
 		}
 		dstVal.Set(array)
+	}
+	return nil
+}
+
+func (arguments Arguments) unpackIntoMap(v map[string]interface{}, marshalledValues []interface{}) error {
+	// Make sure map is not nil
+	if v == nil {
+		return fmt.Errorf("abi: cannot unpack into a nil map")
+	}
+
+	for i, arg := range arguments.NonIndexed() {
+		v[arg.Name] = marshalledValues[i]
 	}
 	return nil
 }

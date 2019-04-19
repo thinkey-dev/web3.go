@@ -3,6 +3,7 @@ package abi
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 )
@@ -60,6 +61,24 @@ func (abi ABI) Unpack(v interface{}, name string, output []byte) (err error) {
 	return fmt.Errorf("abi: could not locate named method or event")
 }
 
+func (abi ABI) UnpackIntoMap(v map[string]interface{}, name string, data []byte) (err error) {
+	if len(data) == 0 {
+		return fmt.Errorf("abi: unmarshalling empty output")
+	}
+	// since there can't be naming collisions with contracts and events,
+	// we need to decide whether we're calling a method or an event
+	if method, ok := abi.Methods[name]; ok {
+		if len(data)%32 != 0 {
+			return fmt.Errorf("abi: improperly formatted output")
+		}
+		return method.Outputs.UnpackIntoMap(v, data)
+	}
+	if event, ok := abi.Events[name]; ok {
+		return event.Inputs.UnpackIntoMap(v, data)
+	}
+	return fmt.Errorf("abi: could not locate named method or event")
+}
+
 func (abi *ABI) UnmarshalJSON(data []byte) error {
 	var fields []struct {
 		Type      string
@@ -112,4 +131,24 @@ func (abi *ABI) MethodById(sigdata []byte) (*Method, error) {
 		}
 	}
 	return nil, fmt.Errorf("no method with id: %#x", sigdata[:4])
+}
+
+
+//inputParam input[4:]
+
+func (abi ABI) InputUnpack(v map[string]interface{}, name string, inputParam []byte) (err error) {
+
+	// 判断输入数据是否正确
+	if len(inputParam) == 0 {
+		return errors.New("abi: unmarshalling empty input")
+	} else if len(inputParam)%32 != 0 {
+		return errors.New("abi: improperly formatted input")
+	}
+
+	// 得到abi的方法信息
+	if method, ok := abi.Methods[name]; ok {
+
+		return method.Inputs.UnpackIntoMap(v, inputParam)
+	}
+	return errors.New("abi: could not locate named method")
 }

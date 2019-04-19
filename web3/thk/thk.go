@@ -152,3 +152,39 @@ func (thk *Thk) GetBlockHeader(chainId string, height string) (*dto.GetBlockResu
 	}
 	return res, nil
 }
+
+func (thk *Thk) Ping(chainId string) (int64, error) {
+	params := new(util.PingJson)
+	if err := params.FormatParams(chainId); err != nil {
+		return 0, err
+	}
+	res := make(map[string]interface{})
+	if err := thk.provider.SendRequest(&res, "Ping", params); err != nil {
+		return 0, err
+	}
+
+	if _, ok := res["errMsg"]; ok {
+		return 0, errors.New(res["errMsg"].(string))
+	}
+	ret := int64(res["nonce"].(float64))
+
+	return ret, nil
+}
+
+// func (thk *Thk) GetChainInfo(chainId string) {
+// 	params := new(util.GetChainInfoJson)
+// 	if err := params.FormatParams(chainId); err != nil {
+// 		return 0, err
+// 	}
+// 	res := make(map[string]interface{})
+// 	if err := thk.provider.SendRequest(&res, "Ping", params); err != nil {
+// 		return 0, err
+// 	}
+//
+// 	if _, ok := res["errMsg"]; ok {
+// 		return 0, errors.New(res["errMsg"].(string))
+// 	}
+// 	ret := int64(res["nonce"].(float64))
+//
+// 	return ret, nil
+// }
