@@ -8,7 +8,6 @@ import (
 	"math/big"
 	"strings"
 	"web3.go/common/hexutil"
-	"web3.go/web3/complex/types"
 	"web3.go/web3/dto"
 	"web3.go/web3/thk/abi"
 	"web3.go/web3/thk/util"
@@ -121,26 +120,16 @@ func (contract *Contract) Send(transaction util.Transaction, functionName string
 
 func (contract *Contract) Deploy(transaction util.Transaction, bytecode string, privatekey *ecdsa.PrivateKey, args ...interface{}) (string, error) {
 
-	// constructor := contract.functions["constructor"]
-	constructor := contract.functions["constructor"]
-
-	for index := 0; index < len(constructor); index++ {
-		tmpBytes, err := contract.getHexValue(constructor[index], args[index])
-
-		if err != nil {
-			return "", err
-		}
-
-		bytecode += tmpBytes
+	fixedArrStrPack, err := contract.abi.Pack("", args...)
+	if err != nil {
+		return "", err
 	}
-
-	transaction.Input = string(types.ComplexString(bytecode))
-	err := contract.super.SignTransaction(&transaction, privatekey)
+	transaction.Input = bytecode + hexutil.Encode(fixedArrStrPack)[2:]
+	err = contract.super.SignTransaction(&transaction, privatekey)
 	if err != nil {
 		return "", err
 	}
 	return contract.super.SendTx(&transaction)
-
 }
 
 func (contract *Contract) Call(transaction util.Transaction, functionName string, args ...interface{}) (*dto.TxResult, error) {
@@ -153,4 +142,12 @@ func (contract *Contract) Call(transaction util.Transaction, functionName string
 	transaction.Input = hexutil.Encode(fixedArrStrPack)
 	return contract.super.CallTransaction(&transaction)
 
+}
+func (contract *Contract) Parse(callRes *dto.TxResult, name string, args interface{}) error {
+	res, err := hexutil.Decode(callRes.Out)
+	if err = contract.abi.Unpack(&args, name, res); err != nil {
+		return err
+	} else {
+		return nil
+	}
 }
