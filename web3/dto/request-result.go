@@ -32,6 +32,15 @@ type SendTxResult struct {
 	TXhash string `json:"TXhash,omitempty"`
 	ErrMsg string `json:"ErrMsg,omitempty"`
 }
+type RpcMakeVccProofJson struct {
+	Proof  map[string]interface{} `json:"proof,omitempty"`
+	ErrMsg string                 `json:"ErrMsg,omitempty"`
+}
+
+type MakeCCCExistenceProofJson struct {
+	Proof  map[string]interface{} `json:"proof,omitempty"`
+	ErrMsg string                 `json:"ErrMsg,omitempty"`
+}
 
 type TransactionResult struct {
 	ChainId int    `json:"chainId"`
@@ -65,6 +74,28 @@ type GetBlockResult struct {
 	Txcount      int    `json:"txcount"`
 	Timestamp    int64  `json:"timestamp"`
 	ErrMsg       string `json:"ErrMsg,Omitempty"`
+}
+
+type GetChainInfo struct {
+	ChainId      int    `json:"chainId"`
+	DataNodeId   string `json:"dataNodeId"`
+	DataNodeIp   string `json:"dataNodeIp"`
+	DataNodePort int    `json:"dataNodePort"`
+	Mode         int    `json:"mode"`
+	Parent       int    `json:"parent"`
+	ErrMsg       string `json:"ErrMsg,Omitempty"`
+}
+
+type GetChainStats struct {
+	ChainId       int `json:"chainId"`
+	Currentheight int `json:"currentheight"`
+}
+
+type GetCommittee struct {
+	ChainId       int32    `json:"chainId"`
+	MemberDetails []string `json:"memberDetails"`
+	Epoch         int      `json:"epoch"`
+	ErrMsg        string   `json:"ErrMsg,Omitempty"`
 }
 
 type GetMultiStatsResult struct {

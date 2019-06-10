@@ -13,16 +13,17 @@ type GetBlockTxsJson struct {
 }
 
 type Transaction struct {
-	ChainId     string `json:"chainId"`
-	FromChainId string `json:"fromChainId,omitempty"`
-	ToChainId   string `json:"toChainId,omitempty"`
-	From        string `json:"from"`
-	To          string `json:"to"`
-	Nonce       string `json:"nonce"`
-	Value       string `json:"value"`
-	Sig         string `json:"sig,omitempty"`
-	Pub         string `json:"pub,omitempty"`
-	Input       string `json:"input"`
+	ChainId      string `json:"chainId"`
+	FromChainId  string `json:"fromChainId,omitempty"`
+	ToChainId    string `json:"toChainId,omitempty"`
+	From         string `json:"from"`
+	To           string `json:"to"`
+	Nonce        string `json:"nonce"`
+	Value        string `json:"value"`
+	Sig          string `json:"sig,omitempty"`
+	Pub          string `json:"pub,omitempty"`
+	Input        string `json:"input"`
+	ExpireHeight int    `json:"expireheight"`
 }
 
 type GetTxByHash struct {
@@ -40,9 +41,18 @@ type PingJson struct {
 }
 
 type GetChainInfoJson struct {
-	ChainId string `json:"chainId"`
+	ChainId []int `json:"chainId"`
+}
+
+type GetStatsJson struct {
+	ChainId int `json:"chainId"`
 }
 
 type GetMultiStatsJson struct {
 	ChainId string `json:"chainId"`
+}
+
+type GetCommitteeJson struct {
+	ChainId string `json:"chainId"`
+	Epoch   int    `json:"epoch"`
 }
