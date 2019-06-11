@@ -145,7 +145,7 @@ func (contract *Contract) Call(transaction util.Transaction, functionName string
 }
 func (contract *Contract) Parse(callRes *dto.TxResult, name string, args interface{}) error {
 	res, err := hexutil.Decode(callRes.Out)
-	if err = contract.abi.Unpack(&args, name, res); err != nil {
+	if err = contract.abi.Unpack(args, name, res); err != nil {
 		return err
 	} else {
 		return nil
