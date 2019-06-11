@@ -2,6 +2,7 @@ package test
 
 import (
 	"encoding/binary"
+	"fmt"
 	"github.com/go-ethereum/crypto"
 	"io"
 	"math/big"
@@ -203,6 +204,8 @@ func TestThkCashCheck(t *testing.T) {
 	println(intput)
 
 	str := hexutil.Encode(intput)
+	fmt.Println("------------------")
+	fmt.Println(str)
 	transaction := util.Transaction{
 		ChainId: "2", FromChainId: "2", ToChainId: "3", From: from,
 		To: to, Value: "2333", Input: str, Nonce: strconv.Itoa(int(nonce)),
