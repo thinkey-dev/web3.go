@@ -196,7 +196,7 @@ func TestThkCashCheck(t *testing.T) {
 		Nonce:        uint64(nonce),
 		ToChain:      3,
 		ToAddress:    BytesToAddress(to_str),
-		ExpireHeight: 33772,
+		ExpireHeight: 279228 + 5000,
 		Amount:       big.NewInt(1),
 	}
 	println(vcc.Nonce)
@@ -208,7 +208,7 @@ func TestThkCashCheck(t *testing.T) {
 	fmt.Println(str)
 	transaction := util.Transaction{
 		ChainId: "2", FromChainId: "2", ToChainId: "3", From: from,
-		To: to, Value: "2333", Input: str, Nonce: strconv.Itoa(int(nonce)),
+		To: to, Value: "0", Input: str, Nonce: strconv.Itoa(int(nonce)),
 	}
 	privatekey, err := crypto.HexToECDSA(key)
 	err = connection.Thk.SignTransaction(&transaction, privatekey)
@@ -227,6 +227,7 @@ func TestThkSaveCashCheck(t *testing.T) {
 	to := "0x0000000000000000000000000000000000030000"
 
 	nonce, err := connection.Thk.GetNonce(from, "3")
+	fmt.Println(nonce)
 	if err != nil {
 		t.Error(err)
 		t.FailNow()
@@ -250,7 +251,7 @@ func TestThkSaveCashCheck(t *testing.T) {
 	//str:=hexutil.Encode(intput)
 	transaction := util.Transaction{
 		ChainId: "3", FromChainId: "3", ToChainId: "3", From: from,
-		To: to, Value: "2333", Input: "0x95000000022c7536e3605d9c16a7a3d7b1898e529396a65c230000000000000012000000034fa1c4e6182b6b7f3bca273390cf587b50b4731100000000000083ec010102a280c0c0b207570b7d18d77cf14dda7b145b624b6829a5c871d3b325c1db03fbc1c8776f93941093a1bbdfe64a6c872bce61e40e6f24a4c5b281d606969773ce1a80daec7c4500ccf59ec200008080940e934080c202d6808100039f6cfc2b0f1741dbe88919515314ff10514b28d80db83cf35e8379c1f0b50df99c6b2c1b0d0b25a008e6c882cc7b415f309965c72ad2b944ac0931048ca31cd57855b2fc1b3086df9936adf68d035acaf19b5f8e775b12a611f44d15eb048c820001049424930080c20000c06c1d20d0284e5d443571a62662b289e788298ee754958406ce345b3702949a7c8100051214b76617a782b0b3752582f65b95d54e560b78192bdd83a530dc7e446a6924f2e9abc3465d31d92b6e9677ffc891f609bdc57bc3d125e589177ad63cb2cac979698713be5c13ec858331f021edfe82c733f815b2cde5f030a4816a8986af3eeca078605c1b0ad6ff4323f7c23307585d3dddd504f96e7a7f722f9802d2a1b7701b444bf94b73018944f48a65b45784ea83896e9c00779eba39d5a855cb9667000110", Nonce: strconv.Itoa(int(nonce)),
+		To: to, Value: "0", Input: "0x95000000022c7536e3605d9c16a7a3d7b1898e529396a65c230000000000000042000000034fa1c4e6182b6b7f3bca273390cf587b50b473110000000000045644010102a304471cc04daacb7b7c7aedc99641e5ca5698acae3026669f3939f6757f239afc6bf6aefc94941093a1a0df8e3f6a5bf468075826c85d00b1c83ff3b1268f6e8fcbf4b1b090fc02a06021c200008080940d934080c20028808100017a92957e842499e3eb05f3e89683be8d14dd8e753f3b02355dbf39eccfb3d6b20001019403934080c2ffff8081000495f5abd6dfe47cfa3bcfdf88a636d92f7047dbc6b2fabb33da5c71c21e193989451a4767cd1265d629f7c4a6dc298704c2f9d9342c603d11220ca99dffff70ea0c32794c7415e80e33bf93bf6fcdd8ddd2260197fab5690601451612729506523ec792c1c2439978bd9cb5c23d3dc06649cfccaef1d5ef9dd5c507d1cc9c2a6a0001039424930080c20000c08f919b95ead8dbcf25cb16eb3b6d7bc79ce9e6af2823e377e44f1d725f2f056e810005fcb6c9e006ebd8699e4b0aa00a1391e2b3aca513e7fca5fb3c4098deed27a593bb8ef4e4dce46ba0743ecaf6e7fe2f916324512d1725cea4e15cebb6e821bcfb1c41807fcb3b674579cd535c46f2822bb70ee83200ad68576b064c21d2e01690eca078605c1b0ad6ff4323f7c23307585d3dddd504f96e7a7f722f9802d2a1b74fca1f5de7c524d6658648ee28c95512adc78dcd0f440b2fd6600cc51ea2326e000110", Nonce: strconv.Itoa(int(nonce)),
 	}
 	privatekey, err := crypto.HexToECDSA(key)
 	err = connection.Thk.SignTransaction(&transaction, privatekey)
@@ -318,8 +319,12 @@ func TestThkRpcMakeVccProof(t *testing.T) {
 		t.FailNow()
 	}
 
-	stats, _ := connection.Thk.GetStats(2)
-	expireHeight := stats.Currentheight + 5000
+	//stats, _ := connection.Thk.GetStats(2)
+	expireHeight := 279228 + 5000
+
+	//fmt.Println(stats.Currentheight)
+
+	fmt.Println(expireHeight)
 
 	transaction := util.Transaction{
 		ChainId: "2", FromChainId: "2", ToChainId: "3", From: from,
@@ -341,8 +346,8 @@ func TestThkMakeCCCExistenceProof(t *testing.T) {
 		t.FailNow()
 	}
 
-	stats, _ := connection.Thk.GetStats(3)
-	expireHeight := stats.Currentheight + 5000
+	//stats, _ := connection.Thk.GetStats(3)
+	expireHeight := 279228 + 5000
 
 	transaction := util.Transaction{
 		ChainId: "3", FromChainId: "3", ToChainId: "2", From: from,
