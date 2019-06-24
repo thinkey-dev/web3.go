@@ -48,6 +48,13 @@ type GetStatsJson struct {
 	ChainId int `json:"chainId"`
 }
 
+type GetTransactionsJson struct {
+	ChainId     string `json:"chainId"`
+	Address     string `json:"address"`
+	StartHeight string `json:"startHeight"`
+	EndHeight   string `json:"endHeight"`
+}
+
 type GetMultiStatsJson struct {
 	ChainId string `json:"chainId"`
 }

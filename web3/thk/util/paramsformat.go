@@ -54,3 +54,12 @@ func (param *GetMultiStatsJson) FormatParams(chainId string) error {
 	param.ChainId = chainId
 	return nil
 }
+
+//chainId ,address ,startHeight ,endHeight string
+func (param *GetTransactionsJson) FormatParams(chainId, address, startHeight, endHeight string) error {
+	param.ChainId = chainId
+	param.Address = address
+	param.StartHeight = startHeight
+	param.EndHeight = endHeight
+	return nil
+}
