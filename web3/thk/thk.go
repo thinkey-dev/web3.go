@@ -89,16 +89,27 @@ func (thk *Thk) SendTx(transaction *util.Transaction) (string, error) {
 
 //交易签名
 func (thk *Thk) SignTransaction(transaction *util.Transaction, privatekey *ecdsa.PrivateKey) error {
-	var toaddr string
+	var toAddr string
+	var fromAddr string
 	if len(transaction.To) > 2 {
-		toaddr = transaction.To[2:]
+		toAddr = transaction.To[2:]
+
+		toAddr = strings.ToLower(toAddr)
 	}
+
+	if len(transaction.From) > 2 {
+		fromAddr = transaction.From[2:]
+
+		fromAddr = strings.ToLower(fromAddr)
+	}
+
+
 	var input string
 	if len(transaction.Input) > 2 {
 		input = transaction.Input[2:]
 	}
 
-	str := []string{transaction.ChainId, transaction.From[2:], toaddr, transaction.Nonce, transaction.Value, input}
+	str := []string{transaction.ChainId, fromAddr, toAddr, transaction.Nonce, transaction.Value, input}
 	p := strings.Join(str, "")
 	tmp := sha3.NewKeccak256()
 	_, err := tmp.Write([]byte(p))
