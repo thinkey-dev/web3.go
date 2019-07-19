@@ -1,4 +1,35 @@
 # web3.go-thk
+#Installation
+
+go get
+
+go get -u github.com/thinkey-dev/web3.go-thk/
+
+#Usage
+通过交易hash获取交易详情(web3.thk.GetTxByHash)
+```
+var response =  web3.thk. GetTransactionByHash("2","0x3cbd7226fb9d4c9bbd27cdc230a647ecd19aa2997e23ab899778026093f45326")
+```
+```
+response:
+{
+"Transaction": {
+"chainID": 2,
+"from": "0x2c7536e3605d9c16a7a3d7b1898e529396a65c23",
+"input": "0x",
+"nonce": 42,
+"to": "0x6ea0fefc17c877c7a4b0f139728ed39dc134a967",
+"value": 2333
+},
+"blockHeight": 117354,
+"contractAddress": "0x0000000000000000000000000000000000000000",
+"logs": null,
+"out": "0x",
+"root": null,
+"status": 1,
+"transactionHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
 # Thinkey Web3.go SDK接口文档
 
 # 1. 获取账户余额(web3.thk.GetBalance)
