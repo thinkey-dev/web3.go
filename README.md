@@ -3,7 +3,7 @@
 
 go get
 
-go get -u github.com/thinkey-dev/web3.go-thk/
+go get -u github.com/thinkey-dev/web3.go
 
 #Usage
 通过交易hash获取交易详情(web3.thk.GetTxByHash)
