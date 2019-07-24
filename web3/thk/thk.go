@@ -103,7 +103,6 @@ func (thk *Thk) SignTransaction(transaction *util.Transaction, privatekey *ecdsa
 		fromAddr = strings.ToLower(fromAddr)
 	}
 
-
 	var input string
 	if len(transaction.Input) > 2 {
 		input = transaction.Input[2:]
@@ -308,3 +307,33 @@ func (thk *Thk) MakeCCCExistenceProof(transaction *util.Transaction) (map[string
 }
 
 //GetCCCRelativeTx
+func (thk *Thk) GetCCCRelativeTx(transaction *util.Transaction) (map[string]interface{}, error) {
+	res := new(dto.GetCCCRelativeTxJson)
+	if err := thk.provider.SendRequest(res, "GetCCCRelativeTx", transaction); err != nil {
+		return nil, err
+	}
+	if res.ErrMsg != "" {
+		err := errors.New(res.ErrMsg)
+		return nil, err
+	}
+	return res.Proof, nil
+}
+
+//CompileContract
+func (thk *Thk) CompileContract(chainId, contract string) (map[string]interface{}, error) {
+	params := new(util.CompileContractJson)
+	ers := params.FormatParams(chainId, contract)
+	if ers != nil {
+		fmt.Println(ers)
+	}
+	res := new(dto.CompileContractJson)
+	if err := thk.provider.SendRequest(res, "CompileContract", params); err != nil {
+		return nil, err
+	}
+	if res.ErrMsg != "" {
+		err := errors.New(res.ErrMsg)
+		return nil, err
+	}
+	return res.Test, nil
+
+}

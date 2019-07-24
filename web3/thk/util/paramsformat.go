@@ -35,6 +35,11 @@ func (param *GetCommitteeJson) FormatParams(chainId string, epoch int) error {
 	param.Epoch = epoch
 	return nil
 }
+func (param *CompileContractJson) FormatParams(chainId string, contract string) error {
+	param.ChainId = chainId
+	param.Contract = contract
+	return nil
+}
 
 func (param *PingJson) FormatParams(chainid string) error {
 	param.ChainId = chainid

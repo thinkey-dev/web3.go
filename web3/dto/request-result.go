@@ -42,6 +42,15 @@ type MakeCCCExistenceProofJson struct {
 	ErrMsg string                 `json:"ErrMsg,omitempty"`
 }
 
+//GetCCCRelativeTx
+type GetCCCRelativeTxJson struct {
+	Proof  map[string]interface{} `json:"proof,omitempty"`
+	ErrMsg string                 `json:"ErrMsg,omitempty"`
+}
+type CompileContractJson struct {
+	Test   map[string]interface{} `json:"test,omitempty"`
+	ErrMsg string                 `json:"ErrMsg,omitempty"`
+}
 type TransactionResult struct {
 	ChainId int    `json:"chainId"`
 	From    string `json:"from"`

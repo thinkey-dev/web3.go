@@ -63,3 +63,7 @@ type GetCommitteeJson struct {
 	ChainId string `json:"chainId"`
 	Epoch   int    `json:"epoch"`
 }
+type CompileContractJson struct {
+	ChainId  string `json:"chainId"`
+	Contract string `json:"contract"`
+}

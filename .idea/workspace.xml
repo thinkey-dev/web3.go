@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go" line="245" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go" line="248" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d92b0e6-e725-45dd-8f05-7a1252e3884c" name="默认更改列表" comment="添加RpcMakeVccProof&#10;MakeCCCExistenceProof&#10;Getstats">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/thk/thk_sendtx_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/thk/thk_sendtx_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3/dto/request-result.go" beforeDir="false" afterPath="$PROJECT_DIR$/web3/dto/request-result.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3/thk/thk.go" beforeDir="false" afterPath="$PROJECT_DIR$/web3/thk/thk.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3/thk/util/paramsformat.go" beforeDir="false" afterPath="$PROJECT_DIR$/web3/thk/util/paramsformat.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3/thk/util/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/web3/thk/util/util.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +22,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/thk/thk_contract_test.go">
+        <entry file="file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="221" column="28" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="28" />
+              <folding>
+                <element signature="e#14#233#0" expanded="true" />
+                <element signature="n#!!block;n#Serialization#0" />
+                <element signature="n#!!block;n#Deserialization#0" />
+                <element signature="n#!!block;n#BytesToAddress#0" />
+                <element signature="n#!!block;n#SetBytes#0" />
+                <element signature="n#!!block;n#TestThkGetCommittee#0" />
+                <element signature="n#!!block;n#TestThkSendTx#0" />
+                <element signature="n#!!block;n#TestThkMakeCCCExistenceProof#0" />
+                <element signature="n#!!block;n#TestThkGetTransactionByHash#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#14#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web3/thk/thk.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="90" column="55" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
+              <folding>
+                <element signature="e#350#407#0" />
+                <element signature="e#495#910#0" />
+                <element signature="e#2147#2780#0" />
+                <element signature="e#2871#3101#0" />
+                <element signature="e#3207#3551#0" />
+                <element signature="e#3654#4003#0" />
+                <element signature="e#4062#4436#0" />
+                <element signature="e#4438#4487#0" />
+                <element signature="e#5006#5392#0" />
+                <element signature="e#5921#6277#0" />
+                <element signature="e#6370#6731#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web3/thk/contract.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1965">
+              <caret line="142" column="41" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -37,73 +96,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-              <folding>
-                <element signature="n#!!block;n#Deserialization#0" />
-                <element signature="e#4838#4840#0" />
-                <element signature="n#!!block;n#TestThkSendTx#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/cryp/crypto/crypto_test.go">
+        <entry file="file://$PROJECT_DIR$/web3/thk/util/paramsformat.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/cryp/crypto/crypto.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="135" column="17" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
               <folding>
-                <element signature="e#809#1096#0" expanded="true" />
+                <element signature="n#!!block;n#FormatParams#0" />
+                <element signature="n#!!block;n#FormatParams#3" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web3/thk/thk.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="218" column="20" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
-              <folding>
-                <element signature="e#13#227#0" expanded="true" />
-                <element signature="n#!!block;n#GetBalance#0" />
-                <element signature="n#!!block;n#GetNonce#0" />
-                <element signature="n#!!block;n#GetBlockTxs#0" />
-                <element signature="n#!!block;n#SendTx#0" />
-                <element signature="n#!!block;n#SignTransaction#0" />
-                <element signature="e#4423#4472#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web3/providers/interface.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web3/thk/contract.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="116" column="30" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -111,24 +112,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web3/thk/util/util.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+            <state relative-caret-position="456">
+              <caret line="65" selection-start-line="65" selection-end-line="68" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/桌面/rpcserver_client.go">
+        <entry file="file://$PROJECT_DIR$/web3/dto/request-result.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1945">
-              <caret line="773" column="54" selection-start-line="773" selection-start-column="54" selection-end-line="773" selection-end-column="54" />
+            <state relative-caret-position="112">
+              <caret line="61" column="13" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="13" />
               <folding>
-                <element signature="e#8685#8699#0" />
-                <element signature="e#13395#13504#0" />
-                <element signature="e#14955#15548#0" />
-                <element signature="e#15648#15662#0" />
-                <element signature="e#15910#15922#0" />
-                <element signature="e#16541#16599#0" />
+                <element signature="n#!!block;n#ToComplexString#0" />
+                <element signature="n#!!block;n#ToString#0" />
+                <element signature="n#!!block;n#ToInt#0" />
+                <element signature="n#!!block;n#ToBigInt#0" />
+                <element signature="n#!!block;n#ToComplexIntResponse#0" />
+                <element signature="n#!!block;n#ToBoolean#0" />
+                <element signature="n#!!block;n#ToSignTransactionResponse#0" />
+                <element signature="n#!!block;n#ToTransactionResponse#0" />
+                <element signature="n#!!block;n#ToTransactionReceipt#0" />
+                <element signature="n#!!block;n#ToBlock#0" />
+                <element signature="n#!!block;n#checkResponse#0" />
               </folding>
             </state>
           </provider>
@@ -140,6 +146,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="Go Application" />
       </list>
     </option>
   </component>
@@ -154,8 +161,21 @@
       <find>getBlockTxs</find>
       <find>getTxByHash</find>
       <find>CallTransaction</find>
-      <find>GetTransactionByHash</find>
       <find>crypto</find>
+      <find>Serialization</find>
+      <find>Deserialization</find>
+      <find>getstats</find>
+      <find>BlockTxs</find>
+      <find>&quot;web3.go/common/cryp/crypto&quot;</find>
+      <find>GetBlockTxs</find>
+      <find>0x68c851caa497f16f24199077735c6489cb30cf2545c35032433c92de2e939b59</find>
+      <find>GetTransactionByHash</find>
+      <find>GetBlockHeader</find>
+      <find>GetTransactions</find>
+      <find>SendTx</find>
+      <find>Ping</find>
+      <find>transaction</find>
+      <find>TestThkContract</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -164,6 +184,9 @@
   <component name="GOROOT" path="$USER_HOME$/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -200,23 +223,25 @@
         <option value="$PROJECT_DIR$/test/thk_sendtx_test.go" />
         <option value="$PROJECT_DIR$/test/thk/thk_sendtx.go" />
         <option value="$PROJECT_DIR$/thk_sendtx_test.go" />
-        <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/test/thk/thk_contract_test.go" />
         <option value="$PROJECT_DIR$/encoding/readers.go" />
-        <option value="$PROJECT_DIR$/web3/thk/util/paramsformat.go" />
-        <option value="$PROJECT_DIR$/web3/thk/util/util.go" />
-        <option value="$PROJECT_DIR$/web3/thk/thk.go" />
         <option value="$USER_HOME$/桌面/rpcserver_client.go" />
+        <option value="$PROJECT_DIR$/test/thk/thk_contract_test.go" />
+        <option value="$PROJECT_DIR$/web3/thk/util/util.go" />
+        <option value="$PROJECT_DIR$/web3/thk/util/paramsformat.go" />
         <option value="$PROJECT_DIR$/web3/dto/request-result.go" />
         <option value="$PROJECT_DIR$/test/thk/thk_sendtx_test.go" />
+        <option value="$PROJECT_DIR$/web3/thk/thk.go" />
+        <option value="$PROJECT_DIR$/test/thk/tttt.go" />
+        <option value="$PROJECT_DIR$/main1.go" />
+        <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="188" />
-    <option name="y" value="455" />
-    <option name="width" value="1391" />
-    <option name="height" value="697" />
+    <option name="x" value="206" />
+    <option name="y" value="24" />
+    <option name="width" value="1385" />
+    <option name="height" value="645" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -234,22 +259,6 @@
             <path>
               <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
               <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="hexutil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="encoding" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -260,75 +269,7 @@
             </path>
             <path>
               <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-              <item name="providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-              <item name="thk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-              <item name="thk" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web3.go" type="462c0819:PsiDirectoryNode" />
-              <item name="web3" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.11.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.11.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.11.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web3.go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.11.3" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,7 +278,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultGoTemplateProperty" value="Go Application" />
     <property name="GO_FMT" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -347,7 +288,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web3_py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -387,16 +328,36 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestThkCashCheck in web3.go/test/thk">
-    <configuration name="TestThkCashCheck in web3.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="web3.go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <package value="web3.go" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestCompileContract in web3.go/test/thk" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="web3.go" />
+      <working_directory value="$PROJECT_DIR$/test/thk" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="web3.go/test/thk" />
+      <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestThkCashCheck$" />
+      <pattern value="^TestCompileContract$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestThkCallTx in web3.go/test/thk" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="web3.go" />
+      <working_directory value="$PROJECT_DIR$/test/thk" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="web3.go/test/thk" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestThkCallTx$" />
       <method v="2" />
     </configuration>
     <configuration name="TestThkCashCheck in web3.go/test/thk" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -410,17 +371,6 @@
       <pattern value="^TestThkCashCheck$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestThkRpcMakeVccProof in web3.go/test/thk" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="web3.go" />
-      <working_directory value="$PROJECT_DIR$/test/thk" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="web3.go/test/thk" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestThkRpcMakeVccProof$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestThkSaveCashCheck in web3.go/test/thk" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="web3.go" />
       <working_directory value="$PROJECT_DIR$/test/thk" />
@@ -432,70 +382,59 @@
       <pattern value="^TestThkSaveCashCheck$" />
       <method v="2" />
     </configuration>
-    <configuration name="thk_sendtx_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="web3.go" />
-      <working_directory value="$PROJECT_DIR$/test/thk" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <package value="web3.go" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/test/thk/thk_sendtx_test.go" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Test.TestCompileContract in web3.go/test/thk" />
+        <item itemvalue="Go Test.TestThkCallTx in web3.go/test/thk" />
         <item itemvalue="Go Test.TestThkCashCheck in web3.go/test/thk" />
-        <item itemvalue="Go Test.TestThkRpcMakeVccProof in web3.go/test/thk" />
         <item itemvalue="Go Test.TestThkSaveCashCheck in web3.go/test/thk" />
-        <item itemvalue="Go Test.thk_sendtx_test.go" />
-        <item itemvalue="Go Test.TestThkCashCheck in web3.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.06.10 at 19h 22m 01s.xml">
+    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.07.11 at 16h 26m 27s.xml">
       <configuration name="TestThkCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.06.10 at 19h 22m 34s.xml">
-      <configuration name="TestThkCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestThkSaveCashCheck_in_web3_go_test_thk - 2019.06.10 at 19h 35m 36s.xml">
+    <history-entry file="TestThkSaveCashCheck_in_web3_go_test_thk - 2019.07.11 at 18h 30m 03s.xml">
       <configuration name="TestThkSaveCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.06.10 at 19h 35m 49s.xml">
+    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.07.11 at 18h 34m 36s.xml">
       <configuration name="TestThkCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkSaveCashCheck_in_web3_go_test_thk - 2019.06.10 at 19h 43m 50s.xml">
+    <history-entry file="TestThkSaveCashCheck_in_web3_go_test_thk - 2019.07.11 at 18h 35m 26s.xml">
       <configuration name="TestThkSaveCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkSaveCashCheck_in_web3_go_test_thk - 2019.06.10 at 19h 45m 30s.xml">
+    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.07.11 at 18h 38m 41s.xml">
+      <configuration name="TestThkCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestThkSaveCashCheck_in_web3_go_test_thk - 2019.07.11 at 18h 39m 53s.xml">
       <configuration name="TestThkSaveCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkRpcMakeVccProof_in_web3_go_test_thk - 2019.06.10 at 19h 45m 59s.xml">
-      <configuration name="TestThkRpcMakeVccProof in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.06.11 at 13h 43m 28s.xml">
+    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.07.17 at 15h 33m 47s.xml">
       <configuration name="TestThkCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkRpcMakeVccProof_in_web3_go_test_thk - 2019.06.11 at 14h 08m 05s.xml">
-      <configuration name="TestThkRpcMakeVccProof in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestThkCallTx_in_web3_go_test_thk - 2019.07.17 at 15h 48m 47s.xml">
+      <configuration name="TestThkCallTx in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestThkCashCheck_in_web3_go_test_thk - 2019.06.11 at 14h 19m 15s.xml">
-      <configuration name="TestThkCashCheck in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestThkCallTx_in_web3_go_test_thk - 2019.07.17 at 15h 49m 26s.xml">
+      <configuration name="TestThkCallTx in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestCompileContract_in_web3_go_test_thk - 2019.07.17 at 19h 36m 57s.xml">
+      <configuration name="TestCompileContract in web3.go/test/thk" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22302158" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23408966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.42857143" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4980631" weight="0.41836736" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4980631" weight="0.1632653" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -506,6 +445,7 @@
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5002767" side_tool="true" weight="0.32857144" />
       <window_info anchor="bottom" id="调试" order="13" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -519,7 +459,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="默认更改列表" />
     <MESSAGE value="添加RpcMakeVccProof&#10;MakeCCCExistenceProof&#10;Getstats" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加RpcMakeVccProof&#10;MakeCCCExistenceProof&#10;Getstats" />
+    <MESSAGE value="添加测试go文件（main.go）" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加测试go文件（main.go）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -530,39 +471,9 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go</url>
-          <line>237</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go</url>
-          <line>263</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go</url>
-          <line>275</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/test/thk/thk_getblockheader_test.go</url>
           <line>15</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_contract_test.go</url>
-          <line>58</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_contract_test.go</url>
-          <line>52</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_contract_test.go</url>
-          <line>47</line>
-          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/web3/thk/contract.go</url>
@@ -575,32 +486,14 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_contract_test.go</url>
-          <line>15</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/web3/thk/abi/abi_test.go</url>
           <line>24</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go</url>
-          <line>213</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go</url>
-          <line>200</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go</url>
-          <line>183</line>
-          <properties />
-          <option name="timeStamp" value="39" />
+          <url>file://$PROJECT_DIR$/web3/thk/thk.go</url>
+          <line>124</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -633,18 +526,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../go-web3/providers/http-provider.go" />
-    <entry file="file://$PROJECT_DIR$/web3/dto/block.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding>
-            <element signature="e#958#1014#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/go/src/crypto/ecdsa/ecdsa.go" />
     <entry file="file://$PROJECT_DIR$/common/cryp/sha3/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -652,13 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/cryp/sha3/hashes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -765,7 +639,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/thk/thk_sendtx.go" />
-    <entry file="file://$PROJECT_DIR$/main.go" />
     <entry file="file://$PROJECT_DIR$/web3/thk/abi/abi_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -885,116 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/thk/thk_getaccount_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <element signature="e#14#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/providers/http-provider.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/thk/util/paramsformat.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!block;n#FormatParams#0" />
-            <element signature="n#!!block;n#FormatParams#3" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/providers/interface.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/thk/thk_getblockheader_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="e#14#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/dto/request-result.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="352" column="4" selection-start-line="352" selection-start-column="4" selection-end-line="352" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!block;n#ToComplexString#0" />
-            <element signature="n#!!block;n#ToString#0" />
-            <element signature="n#!!block;n#ToInt#0" />
-            <element signature="n#!!block;n#ToBigInt#0" />
-            <element signature="n#!!block;n#ToComplexIntResponse#0" />
-            <element signature="n#!!block;n#ToBoolean#0" />
-            <element signature="n#!!block;n#ToSignTransactionResponse#0" />
-            <element signature="n#!!block;n#ToTransactionResponse#0" />
-            <element signature="n#!!block;n#ToTransactionReceipt#0" />
-            <element signature="n#!!block;n#ToBlock#0" />
-            <element signature="n#!!block;n#checkResponse#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/thk/util/util.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/桌面/rpcserver_client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1945">
-          <caret line="773" column="54" selection-start-line="773" selection-start-column="54" selection-end-line="773" selection-end-column="54" />
-          <folding>
-            <element signature="e#8685#8699#0" />
-            <element signature="e#13395#13504#0" />
-            <element signature="e#14955#15548#0" />
-            <element signature="e#15648#15662#0" />
-            <element signature="e#15910#15922#0" />
-            <element signature="e#16541#16599#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/thk/contract.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="116" column="30" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web3/thk/thk.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="218" column="20" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
-          <folding>
-            <element signature="e#13#227#0" expanded="true" />
-            <element signature="n#!!block;n#GetBalance#0" />
-            <element signature="n#!!block;n#GetNonce#0" />
-            <element signature="n#!!block;n#GetBlockTxs#0" />
-            <element signature="n#!!block;n#SendTx#0" />
-            <element signature="n#!!block;n#SignTransaction#0" />
-            <element signature="e#4423#4472#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/cryp/crypto/crypto.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -1012,6 +775,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/桌面/rpcserver_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680">
+          <caret line="703" column="31" selection-start-line="703" selection-start-column="31" selection-end-line="703" selection-end-column="31" />
+          <folding>
+            <element signature="e#8685#8699#0" />
+            <element signature="e#13395#13504#0" />
+            <element signature="e#14955#15548#0" />
+            <element signature="e#15648#15662#0" />
+            <element signature="e#15910#15922#0" />
+            <element signature="e#16541#16599#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/桌面/Thinkey+Web3.py文档.md" />
+    <entry file="file://$PROJECT_DIR$/test/thk/thk_getblockheader_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#14#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/thk/thk_getaccount_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="e#14#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/cryp/sha3/hashes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web3/providers/http-provider.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web3/providers/interface.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web3/thk/util/util.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="65" selection-start-line="65" selection-end-line="68" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web3/dto/request-result.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="61" column="13" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!block;n#ToComplexString#0" />
+            <element signature="n#!!block;n#ToString#0" />
+            <element signature="n#!!block;n#ToInt#0" />
+            <element signature="n#!!block;n#ToBigInt#0" />
+            <element signature="n#!!block;n#ToComplexIntResponse#0" />
+            <element signature="n#!!block;n#ToBoolean#0" />
+            <element signature="n#!!block;n#ToSignTransactionResponse#0" />
+            <element signature="n#!!block;n#ToTransactionResponse#0" />
+            <element signature="n#!!block;n#ToTransactionReceipt#0" />
+            <element signature="n#!!block;n#ToBlock#0" />
+            <element signature="n#!!block;n#checkResponse#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/thk/thk_contract_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="11" />
+          <folding>
+            <element signature="e#14#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web3/web3.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1022,21 +879,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/thk/thk_contract_test.go">
+    <entry file="file://$PROJECT_DIR$/web3/thk/util/paramsformat.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="32" />
+        <state relative-caret-position="315">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!block;n#FormatParams#0" />
+            <element signature="n#!!block;n#FormatParams#3" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web3/thk/contract.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="142" column="41" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web3/thk/thk.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="90" column="55" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
+          <folding>
+            <element signature="e#350#407#0" />
+            <element signature="e#495#910#0" />
+            <element signature="e#2147#2780#0" />
+            <element signature="e#2871#3101#0" />
+            <element signature="e#3207#3551#0" />
+            <element signature="e#3654#4003#0" />
+            <element signature="e#4062#4436#0" />
+            <element signature="e#4438#4487#0" />
+            <element signature="e#5006#5392#0" />
+            <element signature="e#5921#6277#0" />
+            <element signature="e#6370#6731#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/thk/tttt.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main1.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/thk/thk_sendtx_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="255">
+          <caret line="221" column="28" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="28" />
           <folding>
+            <element signature="e#14#233#0" expanded="true" />
+            <element signature="n#!!block;n#Serialization#0" />
             <element signature="n#!!block;n#Deserialization#0" />
-            <element signature="e#4838#4840#0" />
+            <element signature="n#!!block;n#BytesToAddress#0" />
+            <element signature="n#!!block;n#SetBytes#0" />
+            <element signature="n#!!block;n#TestThkGetCommittee#0" />
             <element signature="n#!!block;n#TestThkSendTx#0" />
+            <element signature="n#!!block;n#TestThkMakeCCCExistenceProof#0" />
+            <element signature="n#!!block;n#TestThkGetTransactionByHash#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#14#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
