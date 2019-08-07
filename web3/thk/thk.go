@@ -125,7 +125,7 @@ func (thk *Thk) SignTransaction(transaction *util.Transaction, privatekey *ecdsa
 	return nil
 }
 
-//
+//调用交易
 func (thk *Thk) CallTransaction(transaction *util.Transaction) (*dto.TxResult, error) {
 	res := new(dto.TxResult)
 	if err := thk.provider.SendRequest(res, "CallTransaction", transaction); err != nil {
